@@ -16,42 +16,74 @@ public class ExistentialCrisis
 		this.time = 0;
 		this.day = 0;
 	}
-	
+	/**
+	 * gets the name of the player
+	 * @return the player name
+	 */
 	public String getName()
 	{
 		return name;
 	}
 	
+	/**
+	 * sets the name of the player
+	 * @param playerName
+	 */
 	public void setName(String playerName)
 	{
 		name = playerName;
 	}
 	
+	/**
+	 * get the players current sanity
+	 * @return player sanity
+	 */
 	public int getSanity()
 	{
 		return sanity;
 	}
 	
+	/**
+	 * sets the sanity of the player
+	 * @param playerSanity
+	 */
 	public void setSanity(int playerSanity)
 	{
 		sanity = playerSanity;
 	}
 	
+	/**
+	 * gets the players hunger
+	 * @return player hunger
+	 */
 	public int getHunger()
 	{
 		return hunger;
 	}
 	
+	/**
+	 * sets the players hunger
+	 * @param playerHunger
+	 */
 	public void setHunger(int playerHunger)
 	{
 		hunger = playerHunger;
 	}
 	
+	/**
+	 * gets the current time in game as a number between 0 - 4
+	 * @return current in game time
+	 */
 	public int getTime()
 	{
 		return time;
 	}
 	
+	/**
+	 * when called it checks the current time, sets to 0 and calls
+	 * updateDay if greater or equal to 5, otherwise it increments
+	 * time by 1
+	 */
 	public void updateTime()
 	{
 		if(time >= 5)
@@ -65,16 +97,28 @@ public class ExistentialCrisis
 		}	
 	}
 	
+	/**
+	 * get the current in game day
+	 * @return current in game day 
+	 */
 	public int getDay()
 	{
 		return day;
 	}
 	
+	/**
+	 * when called, increments the in game day by one
+	 */
 	public void updateDay()
 	{
 		day++;
 	}
 	
+	/**
+	 * gets a random number 0 and between the number you give it
+	 * @param chance
+	 * @return a number between 0 and chance
+	 */
 	public int gameRandom(int chance)
 	{
 		int r = (int) (Math.random() * (100 - 1)) + 1;
@@ -82,6 +126,10 @@ public class ExistentialCrisis
 		return r;
 	}
 	
+	/**
+	 * returns true if an players sanity is at or below 0
+	 * @return if a play is insane
+	 */
 	public boolean isInsane()
 	{
 		if(sanity <= 0)
