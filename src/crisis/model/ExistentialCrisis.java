@@ -74,4 +74,20 @@ public class ExistentialCrisis
 	{
 		day++;
 	}
+	
+	public int gameRandom(int chance)
+	{
+		int r = (int) (Math.random() * (100 - 1)) + 1;
+		r = r % chance;
+		return r;
+	}
+	
+	public boolean checkSanity()
+	{
+		if(sanity <= 0)
+		{
+			return true;
+		}
+		return false;
+	}
 }
