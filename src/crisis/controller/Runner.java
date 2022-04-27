@@ -1,5 +1,12 @@
 package crisis.controller;
 
-public class Runner {
+import crisis.controller.*;
 
+public class Runner
+{
+	public static void main(String[] args)
+	{
+		Controller app = new Controller();
+		app.start(); 
+	}
 }

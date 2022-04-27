@@ -82,7 +82,7 @@ public class ExistentialCrisis
 		return r;
 	}
 	
-	public boolean checkSanity()
+	public boolean isInsane()
 	{
 		if(sanity <= 0)
 		{
