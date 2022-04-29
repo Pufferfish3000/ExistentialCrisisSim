@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>354</x>
+      <y>72</y>
+      <w>156</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>/ExistentialCrisis/
+
+--
+- name : String
+- sanity : int
+- hunger : int
+- time : int
+- day : int
+
+--
++ get()/ set(...)
++ gameRandom (int) : int
++ isInsane() : boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>282</y>
+      <w>108</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Event</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>324</x>
+      <y>354</y>
+      <w>90</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>HiddenEvent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>300</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+</diagram>
