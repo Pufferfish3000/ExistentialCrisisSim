@@ -12,10 +12,10 @@ public class Event
 	{
 	}
 	
-	public void displayEvent(String eventDescript, String[] eventChoices, String[] eventOutcomes)
+	public String displayEvent(String eventDescript, String[] eventChoices, String[] eventOutcomes)
 	{
 		//display event descript and choices
 		
-		
+		return choice4;
 	}
 }
