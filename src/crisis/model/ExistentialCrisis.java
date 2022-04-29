@@ -157,7 +157,7 @@ public class ExistentialCrisis
 	}
 	
 	/**
-	 * gets a random number 0 and between the number you give it
+	 * gets a random number 0 and between one less than the number you give it
 	 * @param chance
 	 * @return a number between 0 and chance
 	 */
@@ -186,7 +186,7 @@ public class ExistentialCrisis
 	 */
 	public void startEvent()
 	{
-		fileName = gameRandom(1);
+		fileName = gameRandom(2);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
 		gameEvent.displayGameEvent(eventArray);
