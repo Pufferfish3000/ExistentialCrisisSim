@@ -12,10 +12,15 @@ public class Event
 	{
 	}
 	
-	public String displayEvent(String eventDescript, String[] eventChoices, String[] eventOutcomes)
+	/**
+	 * displays event based on parameters
+	 * @param eventDescript
+	 * @param eventChoices
+	 * @param eventOutcomes
+	 */
+	public void displayEvent(String eventDescript, String[] eventChoices, String[] eventOutcomes)
 	{
 		//display event descript and choices
-		
-		return choice4;
+		;
 	}
 }

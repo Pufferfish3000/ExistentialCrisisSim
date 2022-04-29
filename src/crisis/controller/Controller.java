@@ -24,6 +24,9 @@ public class Controller
 		this.pop = new Popup();
 	}
 	
+	/**
+	 * gets basic info from the player and then starts the game
+	 */
 	public void start()
 	{
 		name = pop.askQuestion("Please enter your name.");
@@ -31,8 +34,12 @@ public class Controller
 		playGame();
 	}
 	
+	/**
+	 * runs the game until the player runs out of sanity
+	 */
 	public void playGame()
 	{
+		
 		game.runGame();
 		if(game.isInsane())
 		{
@@ -44,11 +51,19 @@ public class Controller
 		}
 	}
 	
+	/**
+	 * ends the game upon player death
+	 */
 	public void endGame()
 	{
 		
 	}
 	
+	/**
+	 * saves player responses and then prints them to a list
+	 * @param responses
+	 * @param filename
+	 */
 	private void saveListAsText(ArrayList <String> responses, String filename)
 	{
 		File saveFile = new File(filename);
@@ -70,6 +85,11 @@ public class Controller
 		}
 	}
 	
+	/**
+	 * takes information from a file and loads it into a list
+	 * @param filename
+	 * @return an arraylist of what was in the file
+	 */
 	private ArrayList<String> loadTextToList(String filename)
 	{
 		ArrayList<String> fileContents = new ArrayList<String>();
@@ -95,6 +115,10 @@ public class Controller
 		return fileContents;
 	}
 	
+	/**
+	 * handles error for try catch
+	 * @param error
+	 */
 	public void handleError(Exception error)
 	{
 		String details = "your error is " + error.getMessage();

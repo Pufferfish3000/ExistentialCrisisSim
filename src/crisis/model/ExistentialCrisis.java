@@ -17,6 +17,9 @@ public class ExistentialCrisis
 		this.day = 0;
 	}
 	
+	/**
+	 * runs certain methods based on what time it is in game
+	 */
 	public void runGame()
 	{
 		switch(time)
@@ -158,16 +161,25 @@ public class ExistentialCrisis
 		return false;
 	}
 	
+	/**
+	 * starts an event
+	 */
 	public void startEvent()
 	{
 		
 	}
 	
+	/**
+	 * gives players the option to feed themselves
+	 */
 	public void food()
 	{
 		
 	}
 	
+	/**
+	 * gives players the option to sleep
+	 */
 	public void sleep()
 	{
 		
