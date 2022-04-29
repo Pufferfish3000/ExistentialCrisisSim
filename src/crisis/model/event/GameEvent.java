@@ -21,6 +21,17 @@ public class GameEvent
 	public void displayGameEvent(String[] eventData)
 	{
 		//display event descript and choices
+		System.out.println(eventData[0]);
+		System.out.println(eventData[1]);
 		System.out.println(eventData[2]);
+		System.out.println(eventData[3]);
+		System.out.println(eventData[4]);
+		System.out.println(eventData[5]);
+		System.out.println(eventData[6]);
+		System.out.println(eventData[7]);
+		System.out.println(eventData[8]);
+		System.out.println(eventData[9]);
+		System.out.println(eventData[10]);
+		System.out.println(eventData[11]);
 	}
 }
