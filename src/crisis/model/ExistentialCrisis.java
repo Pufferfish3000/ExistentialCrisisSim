@@ -1,5 +1,7 @@
 package crisis.model;
 
+import crisis.model.event.GameEvent;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,6 +12,7 @@ import crisis.view.Popup;
 
 public class ExistentialCrisis 
 {	
+	private GameEvent gameEvent;
 	private Popup pop;
 	private String name;
 	private int sanity;
@@ -17,7 +20,7 @@ public class ExistentialCrisis
 	private int time;
 	private int day;
 	private int fileName;
-	private String[] event;
+	private String[] eventArray;
 	private ArrayList <String> eventData;
 	
 	public ExistentialCrisis()
@@ -28,9 +31,10 @@ public class ExistentialCrisis
 		this.time = 0;
 		this.day = 0;
 		this.pop = new Popup();
-		this.event = new String[9];
+		this.eventArray = new String[9];
 		this.fileName = 1;
 		this.eventData = new ArrayList<String>();
+		this.gameEvent = new GameEvent();
 	}
 	
 	/**
@@ -184,7 +188,8 @@ public class ExistentialCrisis
 	{
 		fileName = gameRandom(1);
 		eventData = loadTextToList(fileName + ".txt");
-		event = (String[]) eventData.toArray();
+		eventArray = (String[]) eventData.toArray();
+		gameEvent.displayGameEvent(eventArray);
 	}
 	
 	/**

@@ -2,13 +2,13 @@ package crisis.model.event;
 
 import java.util.ArrayList;
 
-public class Event 
+public class GameEvent 
 {
 	private String choice1;
 	private String choice2;
 	private String choice3;
 	private String choice4;
-	public void Event()
+	public void GameEvent()
 	{
 	}
 	
@@ -18,7 +18,7 @@ public class Event
 	 * @param eventChoices
 	 * @param eventOutcomes
 	 */
-	public void displayEvent(String eventDescript, String[] eventChoices, String[] eventOutcomes)
+	public void displayGameEvent(String[] eventData)
 	{
 		//display event descript and choices
 		;
