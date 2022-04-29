@@ -13,22 +13,27 @@ public class Controller
 {
 	private Frame crisisFrame;
 	private ExistentialCrisis game;
-	private Popup view;
+	private Popup pop;
+	private String name;
 	
 	public Controller()
 	{
 		this.game = new ExistentialCrisis();
 		this.crisisFrame = new Frame(this);
+		this.name = "";
+		this.pop = new Popup();
 	}
 	
 	public void start()
 	{
+		name = pop.askQuestion("Please enter your name.");
+		game.setName(name);
 		playGame();
 	}
 	
 	public void playGame()
 	{
-		//if statement last thing executed in method
+		game.runGame();
 		if(game.isInsane())
 		{
 			endGame();
@@ -93,6 +98,6 @@ public class Controller
 	public void handleError(Exception error)
 	{
 		String details = "your error is " + error.getMessage();
-		view.displayMessage(details);
+		pop.displayMessage(details);
 	}
 }

@@ -16,6 +16,25 @@ public class ExistentialCrisis
 		this.time = 0;
 		this.day = 0;
 	}
+	
+	public void runGame()
+	{
+		switch(time)
+		{
+		case 3:
+			food();
+			break;
+			
+		case 5:
+			sleep();
+			break;
+			
+		default:
+			startEvent();
+			break;
+		}
+	}
+	
 	/**
 	 * gets the name of the player
 	 * @return the player name
@@ -138,4 +157,20 @@ public class ExistentialCrisis
 		}
 		return false;
 	}
+	
+	public void startEvent()
+	{
+		
+	}
+	
+	public void food()
+	{
+		
+	}
+	
+	public void sleep()
+	{
+		
+	}
+			
 }
