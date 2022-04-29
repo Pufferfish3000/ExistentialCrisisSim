@@ -31,7 +31,7 @@ public class ExistentialCrisis
 		this.time = 0;
 		this.day = 0;
 		this.pop = new Popup();
-		this.eventArray = new String[9];
+		this.eventArray = new String[12];
 		this.fileName = 1;
 		this.eventData = new ArrayList<String>();
 		this.gameEvent = new GameEvent();
@@ -187,8 +187,8 @@ public class ExistentialCrisis
 	public void startEvent()
 	{
 		fileName = gameRandom(1);
-		eventData = loadTextToList(fileName + ".txt");
-		eventArray = (String[]) eventData.toArray();
+		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
+		eventArray = eventData.toArray(new String[0]);
 		gameEvent.displayGameEvent(eventArray);
 	}
 	

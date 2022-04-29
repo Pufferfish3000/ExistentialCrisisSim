@@ -1,0 +1,12 @@
+header
+choices
+2
+3
+4
+outcomes
+2
+3
+4
+12
+12
+12

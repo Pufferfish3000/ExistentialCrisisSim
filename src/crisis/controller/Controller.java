@@ -47,7 +47,7 @@ public class Controller
 		}
 		else
 		{
-			playGame();
+			//playGame();
 		}
 	}
 	

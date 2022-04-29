@@ -21,6 +21,6 @@ public class GameEvent
 	public void displayGameEvent(String[] eventData)
 	{
 		//display event descript and choices
-		;
+		System.out.println(eventData[2]);
 	}
 }
