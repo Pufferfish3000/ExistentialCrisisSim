@@ -60,6 +60,22 @@ public class ExistentialCrisis
 		}
 	}
 	
+	public void getInput(int input)
+	{
+		switch(time)
+		{
+			case 3:
+				break;
+				
+			case 5:
+				break;
+				
+			default:
+				gameEvent.startGameEvent(eventArray, input);
+				break;
+		}
+	}
+	
 	/**
 	 * gets the name of the player
 	 * @return the player name
@@ -191,7 +207,7 @@ public class ExistentialCrisis
 		fileName = gameRandom(2);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
-		gameEvent.startGameEvent(eventArray);
+		gameEvent.startGameEvent(eventArray, -1);
 	}
 	
 	/**
@@ -233,16 +249,13 @@ public class ExistentialCrisis
 	 * @param responses
 	 * @param filename
 	 */
-	private void saveListAsText(ArrayList <String> responses, String filename)
+	public void saveAsText(int responses, String filename)
 	{
 		File saveFile = new File(filename);
 		
 		try (PrintWriter saveText = new PrintWriter(saveFile))
 		{
-			for (String content : responses)
-			{
-				saveText.println(content);
-			}
+			saveText.println(responses);
 		}
 		catch(IOException errorFromIO)
 		{

@@ -15,6 +15,7 @@ public class Controller
 	private ExistentialCrisis game;
 	private Popup pop;
 	private String name;
+	private boolean progress;
 	
 	public Controller()
 	{
@@ -22,6 +23,7 @@ public class Controller
 		this.crisisFrame = new Frame(this);
 		this.name = "";
 		this.pop = new Popup();
+		this.progress = false;
 	}
 	
 	/**
@@ -39,8 +41,10 @@ public class Controller
 	 */
 	public void playGame()
 	{
-		
-		game.runGame();
+		if (!progress)
+		{
+			game.runGame();
+		}
 		if(game.isInsane())
 		{
 			endGame();
@@ -55,6 +59,11 @@ public class Controller
 	 * ends the game upon player death
 	 */
 	public void endGame()
+	{
+		game.saveAsText(game.getDay(), "SCORE.txt");
+	}
+	
+	public void choose(int buttonNumber)
 	{
 		
 	}

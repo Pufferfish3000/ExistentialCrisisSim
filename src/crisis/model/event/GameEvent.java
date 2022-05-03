@@ -1,23 +1,24 @@
 package crisis.model.event;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import crisis.model.*;
 
 public class GameEvent 
 {
 	private ExistentialCrisis game;
 	private String [] data;
-	private int playerInput;
 	private int hungerValue;
 	private int sleepValue;
 	private int sanityValue;
+	private HashMap <String, String> buttonText = new HashMap<String, String>();
 	
 	public void GameEvent()
 	{
 		this.hungerValue = game.getHunger();
 		this.sleepValue = game.getSleep();
 		this.sanityValue = game.getSanity();
-		this.playerInput = -1;
 	}
 	
 	/**
@@ -26,9 +27,13 @@ public class GameEvent
 	 * @param eventChoices
 	 * @param eventOutcomes
 	 */
-	public void startGameEvent(String[] eventData)
+	public void startGameEvent(String[] eventData, int playerInput)
 	{
 		data = eventData;
+		buttonText.put("1", data[1]);
+		buttonText.put("2", data[2]);
+		buttonText.put("3", data[3]);
+		buttonText.put("4", data[4]);
 		//display data[0]
 		//button 1 = data[1]
 		switch(playerInput)
@@ -63,11 +68,6 @@ public class GameEvent
 				sleepValue = (sleepValue + (Integer.parseInt(data[19])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[20])));
 				updateData(sanityValue, sleepValue, hungerValue);
-				break;
-				
-			default:
-				System.gc(); //runs garbage collector to prevent stack overflow error
-				startGameEvent(data);
 				break;
 		}
 		
