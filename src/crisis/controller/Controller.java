@@ -51,6 +51,12 @@ public class Controller
 		}
 	}
 	
+	public String fieldUpdate(int buttonNumber)
+	{
+		String response = "";
+		
+		return response;
+	}
 	/**
 	 * ends the game upon player death
 	 */

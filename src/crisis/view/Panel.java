@@ -2,6 +2,8 @@ package crisis.view;
 import crisis.controller.Controller;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Panel extends JPanel
 {
@@ -84,6 +86,9 @@ public class Panel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		health.addActionListener(click -> healthField.append(app.fieldUpdate(1)));
+		button2.addActionListener(click -> healthField.append(app.fieldUpdate(2)));
+		button3.addActionListener(click -> healthField.append(app.fieldUpdate(3)));
+		button4.addActionListener(click -> healthField.append(app.fieldUpdate(4)));
 	}
 }
