@@ -26,7 +26,7 @@ public class GameEvent
 	 * @param eventChoices
 	 * @param eventOutcomes
 	 */
-	public void displayGameEvent(String[] eventData)
+	public void startGameEvent(String[] eventData)
 	{
 		data = eventData;
 		//display data[0]
@@ -67,7 +67,7 @@ public class GameEvent
 				
 			default:
 				System.gc(); //runs garbage collector to prevent stack overflow error
-				displayGameEvent(data);
+				startGameEvent(data);
 				break;
 		}
 		
