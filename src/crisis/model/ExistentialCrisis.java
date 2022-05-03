@@ -17,6 +17,7 @@ public class ExistentialCrisis
 	private String name;
 	private int sanity;
 	private int hunger;
+	private int sleepy;
 	private int time;
 	private int day;
 	private int fileName;
@@ -35,6 +36,7 @@ public class ExistentialCrisis
 		this.fileName = 1;
 		this.eventData = new ArrayList<String>();
 		this.gameEvent = new GameEvent();
+		this.sleepy = 100;
 	}
 	
 	/**
@@ -206,6 +208,24 @@ public class ExistentialCrisis
 	public void sleep()
 	{
 		
+	}
+	
+	/**
+	 * gets player sleep value
+	 * @return player sleep
+	 */
+	public int getSleep()
+	{
+		return sleepy;
+	}
+	
+	/**
+	 * sets player sleep value
+	 * @param newSleep
+	 */
+	public void setSleep(int newSleep)
+	{
+		sleepy = newSleep;
 	}
 			
 	/**
