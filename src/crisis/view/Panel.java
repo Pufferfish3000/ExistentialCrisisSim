@@ -10,8 +10,7 @@ public class Panel extends JPanel
 	private JButton button2;
 	private JButton button3;
 	private JButton button4;
-	private JTextArea healthArea;
-	private JTextArea mainArea;
+	
 	
 	private JTextArea healthField;
 	private JTextArea mainField;
@@ -27,20 +26,40 @@ public class Panel extends JPanel
 		this.button3 = new JButton("UPDATE");
 		this.button4 = new JButton("UPDATE");
 		
-<<<<<<< Updated upstream
-		this.healthArea = new JTextArea(10,5);
-		this.mainArea = new JTextArea (12, 25);
+		
 		
 		this.layout = new SpringLayout();
-		layout.putConstraint(SpringLayout.NORTH, healthArea, 10, SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.WEST, healthArea, -112, SpringLayout.EAST, button4);
-		layout.putConstraint(SpringLayout.SOUTH, healthArea, -6, SpringLayout.NORTH, button4);
-		layout.putConstraint(SpringLayout.EAST, healthArea, 0, SpringLayout.EAST, button4);
-=======
+		
 		this.healthField = new JTextArea(27,15);
 		this.mainField = new JTextArea(27,42);
 		
 		this.layout = new SpringLayout();
+	
+
+		
+		
+		setupPanel();
+		setupLayout();
+		setupListeners();
+	}
+	
+	private void setupPanel()
+	{
+		this.setPreferredSize(new Dimension(800,600));
+		this.setLayout(layout);
+		
+		this.add(health);
+		this.add(button2);
+		this.add(button3);
+		this.add(button4);
+		
+	
+		this.add(healthField);
+		this.add(mainField);
+	}
+	
+	private void setupLayout()
+	{
 		layout.putConstraint(SpringLayout.WEST, button2, 56, SpringLayout.EAST, health);
 		layout.putConstraint(SpringLayout.EAST, button2, -71, SpringLayout.WEST, button3);
 		layout.putConstraint(SpringLayout.SOUTH, health, 0, SpringLayout.SOUTH, button2);
@@ -61,36 +80,6 @@ public class Panel extends JPanel
 		layout.putConstraint(SpringLayout.NORTH, healthField, 10, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.NORTH, mainField, 0, SpringLayout.NORTH, healthField);
 		layout.putConstraint(SpringLayout.EAST, healthField, -35, SpringLayout.EAST, this);
->>>>>>> Stashed changes
-
-		
-		
-		setupPanel();
-		setupLayout();
-		setupListeners();
-	}
-	
-	private void setupPanel()
-	{
-		this.setPreferredSize(new Dimension(800,600));
-		this.setLayout(layout);
-		
-		this.add(health);
-		this.add(button2);
-		this.add(button3);
-		this.add(button4);
-<<<<<<< Updated upstream
-		
-		this.add(healthArea);
-		this.add(mainArea);
-=======
-		this.add(healthField);
-		this.add(mainField);
->>>>>>> Stashed changes
-	}
-	
-	private void setupLayout()
-	{
 	}
 	
 	private void setupListeners()
