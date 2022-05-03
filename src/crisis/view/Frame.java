@@ -24,5 +24,6 @@ public class Frame  extends JFrame
 		this.setSize(800,600);
 		this.setContentPane(crisisPanel);
 		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
