@@ -10,6 +10,8 @@ public class Panel extends JPanel
 	private JButton button2;
 	private JButton button3;
 	private JButton button4;
+	private JTextArea healthArea;
+	private JTextArea mainArea;
 	
 	private SpringLayout layout;
 	
@@ -22,7 +24,14 @@ public class Panel extends JPanel
 		this.button3 = new JButton("UPDATE");
 		this.button4 = new JButton("UPDATE");
 		
+		this.healthArea = new JTextArea(10,5);
+		this.mainArea = new JTextArea (12, 25);
+		
 		this.layout = new SpringLayout();
+		layout.putConstraint(SpringLayout.NORTH, healthArea, 10, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, healthArea, -112, SpringLayout.EAST, button4);
+		layout.putConstraint(SpringLayout.SOUTH, healthArea, -6, SpringLayout.NORTH, button4);
+		layout.putConstraint(SpringLayout.EAST, healthArea, 0, SpringLayout.EAST, button4);
 
 		
 		
@@ -39,6 +48,9 @@ public class Panel extends JPanel
 		this.add(button2);
 		this.add(button3);
 		this.add(button4);
+		
+		this.add(healthArea);
+		this.add(mainArea);
 	}
 	
 	private void setupLayout()
