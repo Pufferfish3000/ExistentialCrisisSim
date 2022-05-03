@@ -16,7 +16,7 @@ public class Controller
 	private Popup pop;
 	private String name;
 	private boolean progress;
-	
+
 	public Controller()
 	{
 		this.game = new ExistentialCrisis();
@@ -31,6 +31,7 @@ public class Controller
 	 */
 	public void start()
 	{
+		
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
 		playGame();

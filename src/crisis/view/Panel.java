@@ -128,13 +128,15 @@ public class Panel extends JPanel
 		});
 	}
 	
-	private void updateMain(String update)
+	public void updateMain(String update)
 	{
-		
+		mainField.append("hello");
+		//mainField.append(update);
 	}
 	
-	private void updateHealth(String update)
+	public void updateHealth(String update)
 	{
-		
+		healthField.append("/n");
+		healthField.append(update);
 	}
 }

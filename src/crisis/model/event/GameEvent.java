@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import crisis.model.*;
+import crisis.view.*;
+import crisis.controller.*;
 
 public class GameEvent 
 {
 	private ExistentialCrisis game;
+	private Controller app = new Controller();
+	private Panel view;
 	private String [] data;
 	private int hungerValue;
 	private int sleepValue;
@@ -16,6 +20,9 @@ public class GameEvent
 	
 	public void GameEvent()
 	{
+		this.game  = new ExistentialCrisis();
+		this.app = new Controller();
+		this.view = new Panel(app);
 		this.hungerValue = game.getHunger();
 		this.sleepValue = game.getSleep();
 		this.sanityValue = game.getSanity();
@@ -30,16 +37,17 @@ public class GameEvent
 	public void startGameEvent(String[] eventData, int playerInput)
 	{
 		data = eventData;
+		System.out.println(data[0]);
 		buttonText.put("1", data[1]);
 		buttonText.put("2", data[2]);
 		buttonText.put("3", data[3]);
 		buttonText.put("4", data[4]);
-		//display data[0]
-		//button 1 = data[1]
+		view.updateMain(data[0]);
+		view.updateMain("1: " + buttonText.get("1") + "2: " + buttonText.get("2") + "3: " + buttonText.get("3") + "4: " + buttonText.get("4"));
 		switch(playerInput)
 		{
 			case 1:
-				//display data[5]
+				view.updateMain(data[5]);
 				sanityValue = (sanityValue + (Integer.parseInt(data[6])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[7])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[8])));
@@ -47,7 +55,7 @@ public class GameEvent
 				break;
 			
 			case 2:
-				//display data[9]
+				view.updateMain(data[9]);
 				sanityValue = (sanityValue + (Integer.parseInt(data[10])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[11])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[12])));
@@ -55,7 +63,7 @@ public class GameEvent
 				break;
 			
 			case 3:
-				//display data[13]
+				view.updateMain(data[13]);
 				sanityValue = (sanityValue + (Integer.parseInt(data[14])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[15])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[16])));
@@ -63,7 +71,7 @@ public class GameEvent
 				break;
 				
 			case 4:
-				//display data[17]
+				view.updateMain(data[17]);
 				sanityValue = (sanityValue + (Integer.parseInt(data[18])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[19])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[20])));
