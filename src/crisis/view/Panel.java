@@ -13,6 +13,7 @@ public class Panel extends JPanel
 	private JButton button3;
 	private JButton button4;
 	
+	private JScrollPane crisisPane;
 	
 	private JTextArea healthField;
 	private JTextArea mainField;
@@ -28,7 +29,7 @@ public class Panel extends JPanel
 		this.button3 = new JButton("UPDATE");
 		this.button4 = new JButton("UPDATE");
 		
-		
+		this.crisisPane = new JScrollPane();
 		
 		this.layout = new SpringLayout();
 		
@@ -43,6 +44,14 @@ public class Panel extends JPanel
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void setupPane()
+	{
+		healthField.setLineWrap(true);
+		healthField.setWrapStyleWord(true);
+		healthField.setEnabled(false);
+		healthField.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 	
 	private void setupPanel()
@@ -86,9 +95,12 @@ public class Panel extends JPanel
 	
 	private void setupListeners()
 	{
-		health.addActionListener(click -> healthField.append(app.fieldUpdate(1)));
-		button2.addActionListener(click -> healthField.append(app.fieldUpdate(2)));
-		button3.addActionListener(click -> healthField.append(app.fieldUpdate(3)));
-		button4.addActionListener(click -> healthField.append(app.fieldUpdate(4)));
+		health.addActionListener(new ActionListener()
+								{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				app.choose();
+			}
+		});
 	}
 }
