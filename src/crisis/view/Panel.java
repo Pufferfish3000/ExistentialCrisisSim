@@ -51,7 +51,7 @@ public class Panel extends JPanel
 		healthField.setLineWrap(true);
 		healthField.setWrapStyleWord(true);
 		healthField.setEnabled(false);
-		healthField.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		
 	}
 	
 	private void setupPanel()
@@ -99,8 +99,42 @@ public class Panel extends JPanel
 								{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				app.choose();
+				app.choose(1);
 			}
 		});
+		
+		button2.addActionListener(new ActionListener()
+								{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				app.choose(2);
+			}
+		});
+		
+		button3.addActionListener(new ActionListener()
+								{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				app.choose(3);
+			}
+		});
+		
+		button4.addActionListener(new ActionListener()
+								{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				app.choose(4);
+			}
+		});
+	}
+	
+	private void updateMain(String update)
+	{
+		
+	}
+	
+	private void updateHealth(String update)
+	{
+		
 	}
 }
