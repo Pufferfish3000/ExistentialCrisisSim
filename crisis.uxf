@@ -4,12 +4,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>354</x>
-      <y>60</y>
-      <w>156</w>
-      <h>126</h>
+      <x>276</x>
+      <y>36</y>
+      <w>252</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>/ExistentialCrisis/
+bg=blue
 
 --
 - name : String
@@ -25,21 +26,32 @@
 + startEvent() : void
 + food() : void
 + sleep() : void
-</panel_attributes>
++ runGame() : void
++ updateTime() : void
++ saveListAsText(ArrayList &lt;String&gt;, String) : void
++ loadTextToList(String) : ArrayList &lt;String&gt;
++ handleError(Exception) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>312</x>
-      <y>270</y>
-      <w>228</w>
-      <h>168</h>
+      <x>318</x>
+      <y>264</y>
+      <w>150</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>GameEvent
+bg=black
+fg=white
 
 --
-- Exi
+- ExistentialCrisis game;
+- String [] data;
+- int playerInput;
+- int hungerValue;
+- int sleepValue;
+- int sanityValue;
 --
 + startGameEvent (String[]) : void 
 + updateData (int, int, int) : void
@@ -49,23 +61,33 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>564</y>
-      <w>90</w>
-      <h>84</h>
+      <x>306</x>
+      <y>432</y>
+      <w>186</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>HiddenEvent</panel_attributes>
+    <panel_attributes>HiddenGameEvent
+bg=light_gray
+
+--
+- ExistentialCrisis game;
+- String [] data;
+- int hungerValue;
+- int sleepValue;
+- int sanityValue;
+--
++ startHiddenGameEvent (String[]) : void </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>432</y>
+      <x>384</x>
+      <y>372</y>
       <w>18</w>
-      <h>144</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
 </diagram>
