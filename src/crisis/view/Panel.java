@@ -40,7 +40,7 @@ public class Panel extends JPanel
 	
 
 		
-		
+		setupPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -51,6 +51,10 @@ public class Panel extends JPanel
 		healthField.setLineWrap(true);
 		healthField.setWrapStyleWord(true);
 		healthField.setEnabled(false);
+		
+		mainField.setLineWrap(true);
+		mainField.setWrapStyleWord(true);
+		mainField.setEnabled(false);
 		
 	}
 	
