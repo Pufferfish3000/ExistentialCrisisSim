@@ -68,4 +68,9 @@ public class Controller
 	{
 		game.saveAsText(game.getDay(), "SCORE.txt");
 	}
+	
+	public void choose(int buttonNumber)
+	{
+		
+	}
 }
