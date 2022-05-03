@@ -41,19 +41,9 @@ public class Controller
 	 */
 	public void playGame()
 	{
-		if (!progress)
-		{
 			game.runGame();
-		}
-		if(game.isInsane())
-		{
-			endGame();
-		}
-		else
-		{
-			playGame();
-		}
 	}
+
 	
 	/**
 	 * ends the game upon player death
@@ -65,6 +55,15 @@ public class Controller
 	
 	public void choose(int buttonNumber)
 	{
+		game.getInput(buttonNumber);
 		
+		if(game.isInsane())
+		{
+			endGame();
+		}
+		else
+		{
+			playGame();
+		}
 	}
 }
