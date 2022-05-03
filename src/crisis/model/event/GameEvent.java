@@ -1,6 +1,8 @@
 package crisis.model.event;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import crisis.model.*;
 
 public class GameEvent 
@@ -11,6 +13,7 @@ public class GameEvent
 	private int hungerValue;
 	private int sleepValue;
 	private int sanityValue;
+	private HashMap <String, String> buttonText = new HashMap<String, String>();
 	
 	public void GameEvent()
 	{
@@ -29,6 +32,10 @@ public class GameEvent
 	public void startGameEvent(String[] eventData)
 	{
 		data = eventData;
+		buttonText.put("1", data[1]);
+		buttonText.put("2", data[2]);
+		buttonText.put("3", data[3]);
+		buttonText.put("4", data[4]);
 		//display data[0]
 		//button 1 = data[1]
 		switch(playerInput)

@@ -62,6 +62,6 @@ public class Controller
 	 */
 	public void endGame()
 	{
-		
+		game.saveAsText(game.getDay(), "SCORE.txt");
 	}
 }
