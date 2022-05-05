@@ -33,7 +33,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		crisisPanel.updateMain("hi");
+		//crisisPanel.updateMain("hi");
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
 		playGame();
@@ -57,7 +57,7 @@ public class Controller
 		game.saveAsText(game.getDay(), "SCORE.txt");
 	}
 	
-	public void choose(int buttonNumber)
+	public String choose(int buttonNumber)
 	{
 		game.getInput(buttonNumber);
 		
@@ -69,5 +69,7 @@ public class Controller
 		{
 			playGame();
 		}
+		
+		return game.getDisplayText();
 	}
 }

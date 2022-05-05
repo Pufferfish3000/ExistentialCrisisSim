@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
 public class Panel extends JPanel
 {
 	private Controller app;
@@ -24,10 +26,10 @@ public class Panel extends JPanel
 	{
 		super();
 		this.app = app;
-		this.health = new JButton("Health");
-		this.button2 = new JButton("UPDATE");
-		this.button3 = new JButton("UPDATE");
-		this.button4 = new JButton("UPDATE");
+		this.health = new JButton("1");
+		this.button2 = new JButton("2");
+		this.button3 = new JButton("3");
+		this.button4 = new JButton("4");
 		
 		this.crisisPane = new JScrollPane();
 		
@@ -103,7 +105,8 @@ public class Panel extends JPanel
 								{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				app.choose(1);
+				String response = app.choose(1);
+				mainField.append(response);
 			}
 		});
 		

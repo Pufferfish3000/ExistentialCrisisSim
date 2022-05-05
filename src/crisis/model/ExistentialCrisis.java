@@ -151,6 +151,11 @@ public class ExistentialCrisis
 		return time;
 	}
 	
+	public String getDisplayText()
+	{
+		return displayText;
+	}
+	
 	/**
 	 * when called it checks the current time, sets to 0 and calls
 	 * updateDay if greater or equal to 5, otherwise it increments
