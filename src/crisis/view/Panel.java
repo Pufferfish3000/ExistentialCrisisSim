@@ -134,13 +134,13 @@ public class Panel extends JPanel
 	
 	public void updateMain(String update)
 	{
-		mainField.append("hello");
+		mainField.setText("hello");
 		//mainField.append(update);
 	}
 	
 	public void updateHealth(String update)
 	{
-		healthField.append("/n");
-		healthField.append(update);
+		healthField.setText("/n");
+		healthField.setText(update);
 	}
 }
