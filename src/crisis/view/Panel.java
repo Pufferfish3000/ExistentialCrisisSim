@@ -44,6 +44,8 @@ public class Panel extends JPanel
 	   */
 	private SpringLayout layout;
 	
+	private JScrollPane crisisPane;
+	
 	public Panel(Controller app, String info)
 	{
 		super();
@@ -53,6 +55,7 @@ public class Panel extends JPanel
 		this.button3 = new JButton("3");
 		this.button4 = new JButton("4");
 				
+		this.crisisPane = new JScrollPane(mainField);
 		this.layout = new SpringLayout();
 		
 		this.healthField = new JTextArea(27,15);
@@ -60,7 +63,7 @@ public class Panel extends JPanel
 		mainField.setText(info);
 		this.layout = new SpringLayout();
 	
-
+		setupPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -91,6 +94,11 @@ public class Panel extends JPanel
 		this.add(button3);
 		this.add(button4);
 		
+		this.add(crisisPane);
+		
+		crisisPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		crisisPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		
 		healthField.setLineWrap(true);
 		healthField.setWrapStyleWord(true);
 		healthField.setEnabled(false);
@@ -98,6 +106,7 @@ public class Panel extends JPanel
 		mainField.setLineWrap(true);
 		mainField.setWrapStyleWord(true);
 		mainField.setEnabled(false);
+		
 	
 		this.add(healthField);
 		this.add(mainField);
