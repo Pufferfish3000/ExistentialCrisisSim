@@ -69,7 +69,7 @@ public class ExistentialCrisis
 		return displayText;
 	}
 	
-	public void getInput(int input)
+	public String playerInput(int input)
 	{
 		switch(time)
 		{
@@ -82,10 +82,10 @@ public class ExistentialCrisis
 				break;
 				
 			default: 
-				displayText = "";
-				gameEvent.displayGameEvent(eventArray);
+				displayText = gameEvent.displayGameEvent(eventArray);
 				break;
 		}
+		return displayText;
 	}
 	
 	/**
@@ -224,9 +224,7 @@ public class ExistentialCrisis
 		fileName = gameRandom(2);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
-		gameEvent.displayGameEvent(eventArray);
-		
-		return "";
+		return gameEvent.displayGameEvent(eventArray);
 	}
 	
 	/**

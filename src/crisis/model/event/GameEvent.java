@@ -38,21 +38,21 @@ public class GameEvent
 	public String displayGameEvent(String[] eventData)
 	{
 		data = eventData;
-		System.out.println(data[0]);
 		buttonText.put("1", data[1]);
 		buttonText.put("2", data[2]);
 		buttonText.put("3", data[3]);
 		buttonText.put("4", data[4]);
 		output = data[0];
 		output += "\n";
-		output += ("1: " + buttonText.get("1") + "2: " + buttonText.get("2") + "3: " + buttonText.get("3") + "4: " + buttonText.get("4"));
+		output += ("1: " + buttonText.get("1") + " 2: " + buttonText.get("2") + " 3: " + buttonText.get("3") + " 4: " + buttonText.get("4"));
 		
 		return output;
 		
 	}
 	
-	public String gameEventInput(int playerInput)
+	public String gameEventInput(String[] eventData, int playerInput)
 	{
+		data = eventData;
 		switch(playerInput)
 		{
 			case 1:

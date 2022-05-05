@@ -33,7 +33,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		//crisisPanel.updateMain("hi");
+		crisisPanel.updateMain("hi");
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
 		playGame();
@@ -44,7 +44,7 @@ public class Controller
 	 */
 	public void playGame()
 	{
-		crisisPanel.updateMain("hi");
+		System.out.println(game.runGame());
 			//game.runGame();
 	}
 
@@ -59,7 +59,7 @@ public class Controller
 	
 	public String choose(int buttonNumber)
 	{
-		game.getInput(buttonNumber);
+		game.playerInput(buttonNumber);
 		
 		if(game.isInsane())
 		{
