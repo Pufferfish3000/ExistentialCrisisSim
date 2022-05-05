@@ -23,7 +23,9 @@ public class ExistentialCrisis
 	private int fileName;
 	private String[] eventArray;
 	private ArrayList <String> eventData;
+	private int [] newhealth;
 	private String displayText;
+	private String displayHealth;
 	
 	public ExistentialCrisis()
 	{
@@ -39,6 +41,8 @@ public class ExistentialCrisis
 		this.gameEvent = new GameEvent();
 		this.sleepy = 100;
 		this.displayText = "";
+		this.displayHealth = "";
+		this.newhealth = new int[3];
 	}
 	
 	/**
@@ -51,15 +55,18 @@ public class ExistentialCrisis
 			case 3:
 				displayText = "";
 				food();
+				time++;
 				break;
 				
 			case 5:
 				sleep();
 				displayText = "";
+				time = 0;
 				break;
 				
 			default:
 				displayText = startEvent();
+				time++;
 				break;
 		}
 		return displayText;
@@ -81,6 +88,8 @@ public class ExistentialCrisis
 				displayText = gameEvent.gameEventInput(eventArray, input);
 				break;
 		}
+		
+		updateHealth();
 		return displayText;
 	}
 	
@@ -318,5 +327,23 @@ public class ExistentialCrisis
 	{
 		String details = "your error is " + error.getMessage();
 		pop.displayMessage(details);
+	}
+	
+	public String displayHealthbar()
+	{
+		displayHealth = "DAY: " + day + "\n";
+		displayHealth += "TIME: " + time + "\n";
+		displayHealth += "SANITY: " + sanity + "\n";
+		displayHealth += "HUNGER: " + hunger + "\n";
+		displayHealth += "AWARENESS: " + sleepy + "\n";
+		
+		return displayHealth;	
+	}
+	
+	public void updateHealth()
+	{
+		sanity = sanity + newhealth[0];
+		sleepy = sleepy + newhealth[1];
+		hunger = hunger + newhealth[2];
 	}
 }

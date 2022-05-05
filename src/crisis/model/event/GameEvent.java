@@ -57,7 +57,6 @@ public class GameEvent
 				sanityValue = Integer.parseInt(eventData[6]);
 				sleepValue = Integer.parseInt(eventData[7]);
 				hungerValue = Integer.parseInt(eventData[8]);
-				System.out.println(eventData[6]);
 				updateData(sanityValue, sleepValue, hungerValue);
 				break;
 			

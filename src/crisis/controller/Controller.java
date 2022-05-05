@@ -68,4 +68,9 @@ public class Controller
 		
 		return game.playerInput(buttonNumber) + game.runGame();
 	}
+	
+	public String healthbar()
+	{
+		return game.displayHealthbar();
+	}
 }

@@ -156,6 +156,7 @@ public class Panel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String response = app.choose(1);
+				updateHealth(app.healthbar());
 				updateMain(response);
 			}
 		});
@@ -167,6 +168,7 @@ public class Panel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String response = app.choose(2);
+				updateHealth(app.healthbar());
 				updateMain(response);
 				
 			}
@@ -179,6 +181,7 @@ public class Panel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String response = app.choose(3);
+				updateHealth(app.healthbar());
 				updateMain(response);
 			}
 		});
@@ -190,6 +193,7 @@ public class Panel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String response = app.choose(4);
+				updateHealth(app.healthbar());
 				updateMain(response);
 			}
 		});
@@ -209,7 +213,7 @@ public class Panel extends JPanel
 	 */
 	public void updateHealth(String update)
 	{
-		healthField.setText("/n");
+		healthField.setText("");
 		healthField.setText(update);
 	}
 }
