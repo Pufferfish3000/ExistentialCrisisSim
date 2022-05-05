@@ -10,9 +10,9 @@ import crisis.controller.*;
 public class GameEvent 
 {
 	private ExistentialCrisis game;
-	private Controller app = new Controller();
-	private Panel view;
+//	private Controller app = new Controller();
 	private String [] data;
+	private String output;
 	private int hungerValue;
 	private int sleepValue;
 	private int sanityValue;
@@ -21,11 +21,12 @@ public class GameEvent
 	public void GameEvent()
 	{
 		this.game  = new ExistentialCrisis();
-		this.app = new Controller();
-		this.view = new Panel(app);
+//		this.app = new Controller();
+//		this.view = new Panel(app);
 		this.hungerValue = game.getHunger();
 		this.sleepValue = game.getSleep();
 		this.sanityValue = game.getSanity();
+		this.output = "";
 	}
 	
 	/**
@@ -34,7 +35,7 @@ public class GameEvent
 	 * @param eventChoices
 	 * @param eventOutcomes
 	 */
-	public void startGameEvent(String[] eventData, int playerInput)
+	public String displayGameEvent(String[] eventData)
 	{
 		data = eventData;
 		System.out.println(data[0]);
@@ -42,12 +43,20 @@ public class GameEvent
 		buttonText.put("2", data[2]);
 		buttonText.put("3", data[3]);
 		buttonText.put("4", data[4]);
-		view.updateMain(data[0]);
-		view.updateMain("1: " + buttonText.get("1") + "2: " + buttonText.get("2") + "3: " + buttonText.get("3") + "4: " + buttonText.get("4"));
+		output = data[0];
+		output += "\n";
+		output += ("1: " + buttonText.get("1") + "2: " + buttonText.get("2") + "3: " + buttonText.get("3") + "4: " + buttonText.get("4"));
+		
+		return output;
+		
+	}
+	
+	public String gameEventInput(int playerInput)
+	{
 		switch(playerInput)
 		{
 			case 1:
-				view.updateMain(data[5]);
+				output = data[5];
 				sanityValue = (sanityValue + (Integer.parseInt(data[6])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[7])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[8])));
@@ -55,7 +64,7 @@ public class GameEvent
 				break;
 			
 			case 2:
-				view.updateMain(data[9]);
+				output = data[9];
 				sanityValue = (sanityValue + (Integer.parseInt(data[10])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[11])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[12])));
@@ -63,7 +72,7 @@ public class GameEvent
 				break;
 			
 			case 3:
-				view.updateMain(data[13]);
+				output = data[13];
 				sanityValue = (sanityValue + (Integer.parseInt(data[14])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[15])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[16])));
@@ -71,7 +80,7 @@ public class GameEvent
 				break;
 				
 			case 4:
-				view.updateMain(data[17]);
+				output = data[17];
 				sanityValue = (sanityValue + (Integer.parseInt(data[18])));
 				sleepValue = (sleepValue + (Integer.parseInt(data[19])));
 				hungerValue = (hungerValue + (Integer.parseInt(data[20])));
@@ -79,6 +88,7 @@ public class GameEvent
 				break;
 		}
 		
+		return output;
 	}
 	
 	/**

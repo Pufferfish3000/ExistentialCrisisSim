@@ -12,6 +12,7 @@ import crisis.model.ExistentialCrisis;
 public class Controller 
 {
 	private Frame crisisFrame;
+	private Panel crisisPanel;
 	private ExistentialCrisis game;
 	private Popup pop;
 	private String name;
@@ -21,6 +22,7 @@ public class Controller
 	{
 		this.game = new ExistentialCrisis();
 		this.crisisFrame = new Frame(this);
+		this.crisisPanel = new Panel(this);
 		this.name = "";
 		this.pop = new Popup();
 		this.progress = false;
@@ -31,7 +33,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		
+		crisisPanel.updateMain("hi");
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
 		playGame();
@@ -42,7 +44,8 @@ public class Controller
 	 */
 	public void playGame()
 	{
-			game.runGame();
+		crisisPanel.updateMain("hi");
+			//game.runGame();
 	}
 
 	

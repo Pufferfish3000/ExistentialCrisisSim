@@ -7,12 +7,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import crisis.view.Popup;
+import crisis.controller.*;
+import crisis.view.*;
 
 public class ExistentialCrisis 
 {	
 	private GameEvent gameEvent;
+//	private Controller app;
+//	private Panel view;
 	private Popup pop;
 	private String name;
 	private int sanity;
@@ -23,6 +25,7 @@ public class ExistentialCrisis
 	private int fileName;
 	private String[] eventArray;
 	private ArrayList <String> eventData;
+	private String displayText;
 	
 	public ExistentialCrisis()
 	{
@@ -37,27 +40,33 @@ public class ExistentialCrisis
 		this.eventData = new ArrayList<String>();
 		this.gameEvent = new GameEvent();
 		this.sleepy = 100;
+		this.displayText = "";
+//		this.app = new Controller();
+//		this.view = new Panel(app);
 	}
 	
 	/**
 	 * runs certain methods based on what time it is in game
 	 */
-	public void runGame()
+	public String runGame()
 	{
 		switch(time)
 		{
 			case 3:
+				displayText = "";
 				food();
 				break;
 				
 			case 5:
 				sleep();
+				displayText = "";
 				break;
 				
 			default:
-				startEvent();
+				displayText = startEvent();
 				break;
 		}
+		return displayText;
 	}
 	
 	public void getInput(int input)
@@ -65,13 +74,16 @@ public class ExistentialCrisis
 		switch(time)
 		{
 			case 3:
+				displayText = "";
 				break;
 				
 			case 5:
+				displayText = "";
 				break;
 				
-			default:
-				gameEvent.startGameEvent(eventArray, input);
+			default: 
+				displayText = "";
+				gameEvent.displayGameEvent(eventArray);
 				break;
 		}
 	}
@@ -202,12 +214,14 @@ public class ExistentialCrisis
 	/**
 	 * starts an event
 	 */
-	public void startEvent()
+	public String startEvent()
 	{
 		fileName = gameRandom(2);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
-		gameEvent.startGameEvent(eventArray, -1);
+		gameEvent.displayGameEvent(eventArray);
+		
+		return "";
 	}
 	
 	/**
