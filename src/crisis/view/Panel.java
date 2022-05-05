@@ -6,22 +6,48 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-
+/**
+ * 	Panel for the ExistentialCrisisSimulator
+ * @author ccol0217
+ *
+ */
 public class Panel extends JPanel
 {
 	private Controller app;
+	/**
+	 * The first button option
+	 */
 	private JButton health;
+	/**
+	 * The second Button Option
+	 */
 	private JButton button2;
+	/**
+	 * the third button option
+	 */
 	private JButton button3;
+	/**
+	 * The fourth button option
+	 */
 	private JButton button4;
-	
-	private JScrollPane crisisPane;
-	
+	/**
+	 * The field for stats
+	 */
 	private JTextArea healthField;
+	/**
+	 * The field for main information and progression.
+	 */
 	private JTextArea mainField;
-	
+	/**
+	   * Layout manager for the panel. Uses constraints between components to
+	   * align or spring from edges.
+	   */
 	private SpringLayout layout;
-	
+	/**
+	 * Builds the Panel and initializes the data members.
+	 * @param app
+	 * 			Reference to the Controller passed when the Panel is instantiated in the Frame.
+	 */
 	public Panel(Controller app)
 	{
 		super();
@@ -30,9 +56,7 @@ public class Panel extends JPanel
 		this.button2 = new JButton("2");
 		this.button3 = new JButton("3");
 		this.button4 = new JButton("4");
-		
-		this.crisisPane = new JScrollPane();
-		
+				
 		this.layout = new SpringLayout();
 		
 		this.healthField = new JTextArea(27,15);
@@ -41,25 +65,15 @@ public class Panel extends JPanel
 		this.layout = new SpringLayout();
 	
 
-		
-		setupPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
 	
-	private void setupPane()
-	{
-		healthField.setLineWrap(true);
-		healthField.setWrapStyleWord(true);
-		healthField.setEnabled(false);
-		
-		mainField.setLineWrap(true);
-		mainField.setWrapStyleWord(true);
-		mainField.setEnabled(false);
-		
-	}
 	
+	/**
+	 * Helper method to add all components to panel, and adjust gui Settings.
+	 */
 	private void setupPanel()
 	{
 		this.setPreferredSize(new Dimension(800,600));
@@ -70,11 +84,20 @@ public class Panel extends JPanel
 		this.add(button3);
 		this.add(button4);
 		
+		healthField.setLineWrap(true);
+		healthField.setWrapStyleWord(true);
+		healthField.setEnabled(false);
+		
+		mainField.setLineWrap(true);
+		mainField.setWrapStyleWord(true);
+		mainField.setEnabled(false);
 	
 		this.add(healthField);
 		this.add(mainField);
 	}
-	
+	/**
+	 * Helper method to add constraints for GUI components.
+	 */
 	private void setupLayout()
 	{
 		layout.putConstraint(SpringLayout.WEST, button2, 56, SpringLayout.EAST, health);
@@ -99,8 +122,14 @@ public class Panel extends JPanel
 		layout.putConstraint(SpringLayout.EAST, healthField, -35, SpringLayout.EAST, this);
 	}
 	
+	/**
+	 * Attaches listeners to the GUI components of the program.
+	 */
 	private void setupListeners()
 	{
+		/**
+		 * Attaches a listener to the first button option.
+		 */
 		health.addActionListener(new ActionListener()
 								{
 			public void actionPerformed(ActionEvent mouseClick)
@@ -109,7 +138,9 @@ public class Panel extends JPanel
 				mainField.append(response);
 			}
 		});
-		
+		/**
+		 * Attaches a listner to the second button option
+		 */
 		button2.addActionListener(new ActionListener()
 								{
 			public void actionPerformed(ActionEvent mouseClick)
@@ -118,7 +149,9 @@ public class Panel extends JPanel
 				
 			}
 		});
-		
+		/**
+		 * Attaches a listener to the third button option.
+		 */
 		button3.addActionListener(new ActionListener()
 								{
 			public void actionPerformed(ActionEvent mouseClick)
@@ -126,7 +159,9 @@ public class Panel extends JPanel
 				app.choose(3);
 			}
 		});
-		
+		/**
+		 * attaches a listener to the fourth button option.
+		 */
 		button4.addActionListener(new ActionListener()
 								{
 			public void actionPerformed(ActionEvent mouseClick)
@@ -135,13 +170,20 @@ public class Panel extends JPanel
 			}
 		});
 	}
-	
+	/**
+	 * Helper method used to update the mainField.
+	 * @param update
+	 */
 	public void updateMain(String update)
 	{
 		mainField.append(update);
 		//mainField.append(update);
 	}
 	
+	/**
+	 * Helper method used to update the healthField
+	 * @param update
+	 */
 	public void updateHealth(String update)
 	{
 		healthField.setText("/n");
