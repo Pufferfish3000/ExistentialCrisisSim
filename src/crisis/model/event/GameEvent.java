@@ -9,7 +9,6 @@ import crisis.controller.*;
 
 public class GameEvent 
 {
-	private ExistentialCrisis game;
 //	private Controller app = new Controller();
 	private String [] data;
 	private String output;
@@ -18,14 +17,13 @@ public class GameEvent
 	private int sanityValue;
 	private HashMap <String, String> buttonText = new HashMap<String, String>();
 	
-	public void GameEvent()
+	public GameEvent()
 	{
-		this.game  = new ExistentialCrisis();
 //		this.app = new Controller();
 //		this.view = new Panel(app);
-		this.hungerValue = game.getHunger();
-		this.sleepValue = game.getSleep();
-		this.sanityValue = game.getSanity();
+//		this.hungerValue = game.getHunger();
+//		this.sleepValue = game.getSleep();
+//		this.sanityValue = game.getSanity();
 		this.output = "";
 	}
 	
@@ -44,7 +42,7 @@ public class GameEvent
 		buttonText.put("4", data[4]);
 		output = data[0];
 		output += "\n";
-		output += ("1: " + buttonText.get("1") + "2: " + buttonText.get("2") + "3: " + buttonText.get("3") + "4: " + buttonText.get("4"));
+		output += ("1: " + buttonText.get("1") + " 2: " + buttonText.get("2") + " 3: " + buttonText.get("3") + " 4: " + buttonText.get("4")) + "\n";
 		
 		return output;
 		
@@ -52,42 +50,42 @@ public class GameEvent
 	
 	public String gameEventInput(String [] eventData, int playerInput)
 	{
-		data = eventData;
 		switch(playerInput)
 		{
 			case 1:
-				output = data[5];
-				sanityValue = (sanityValue + (Integer.parseInt(data[6])));
-				sleepValue = (sleepValue + (Integer.parseInt(data[7])));
-				hungerValue = (hungerValue + (Integer.parseInt(data[8])));
+				output = eventData[5];
+				sanityValue = (sanityValue + (Integer.parseInt(eventData[6])));
+				sleepValue = (sleepValue + (Integer.parseInt(eventData[7])));
+				hungerValue = (hungerValue + (Integer.parseInt(eventData[8])));
+				System.out.println(eventData[6]);
 				updateData(sanityValue, sleepValue, hungerValue);
 				break;
 			
 			case 2:
-				output = data[9];
-				sanityValue = (sanityValue + (Integer.parseInt(data[10])));
-				sleepValue = (sleepValue + (Integer.parseInt(data[11])));
-				hungerValue = (hungerValue + (Integer.parseInt(data[12])));
+				output = eventData[9];
+				sanityValue = (sanityValue + (Integer.parseInt(eventData[10])));
+				sleepValue = (sleepValue + (Integer.parseInt(eventData[11])));
+				hungerValue = (hungerValue + (Integer.parseInt(eventData[12])));
 				updateData(sanityValue, sleepValue, hungerValue);
 				break;
 			
 			case 3:
-				output = data[13];
-				sanityValue = (sanityValue + (Integer.parseInt(data[14])));
-				sleepValue = (sleepValue + (Integer.parseInt(data[15])));
-				hungerValue = (hungerValue + (Integer.parseInt(data[16])));
+				output = eventData[13];
+				sanityValue = (sanityValue + (Integer.parseInt(eventData[14])));
+				sleepValue = (sleepValue + (Integer.parseInt(eventData[15])));
+				hungerValue = (hungerValue + (Integer.parseInt(eventData[16])));
 				updateData(sanityValue, sleepValue, hungerValue);
 				break;
 				
 			case 4:
-				output = data[17];
-				sanityValue = (sanityValue + (Integer.parseInt(data[18])));
-				sleepValue = (sleepValue + (Integer.parseInt(data[19])));
-				hungerValue = (hungerValue + (Integer.parseInt(data[20])));
+				output = eventData[17];
+				sanityValue = (sanityValue + (Integer.parseInt(eventData[18])));
+				sleepValue = (sleepValue + (Integer.parseInt(eventData[19])));
+				hungerValue = (hungerValue + (Integer.parseInt(eventData[20])));
 				updateData(sanityValue, sleepValue, hungerValue);
 				break;
 		}
-		
+		output += "\n";
 		return output;
 	}
 	
@@ -99,9 +97,9 @@ public class GameEvent
 	 */
 	public void updateData(int newSanity, int newSleep, int newHunger)
 	{
-		game.setSanity(newSanity);
-		game.setSleep(newSleep);
-		game.setHunger(newHunger);
+//		game.setSanity(newSanity);
+//		game.setSleep(newSleep);
+//		game.setHunger(newHunger);
 	}
 	
 }

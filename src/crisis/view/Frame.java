@@ -20,16 +20,12 @@ public class Frame  extends JFrame
 	 */
 	private Panel crisisPanel;
 	
-	/**
-	 * Builds an instance of the Frame with a reference to the Controller instance.
-	 * @param app
-	 */
-	public Frame(Controller app)
+	public Frame(Controller app, String startInfo)
 	{
 		super();
 		
 		this.app = app;
-		this.crisisPanel = new Panel(this.app);
+		this.crisisPanel = new Panel(this.app, startInfo);
 		setupFrame();
 	}
 	/**

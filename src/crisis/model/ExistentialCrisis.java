@@ -65,7 +65,7 @@ public class ExistentialCrisis
 		return displayText;
 	}
 	
-	public String getInput(int input)
+	public String playerInput(int input)
 	{
 		switch(time)
 		{
@@ -78,8 +78,7 @@ public class ExistentialCrisis
 				break;
 				
 			default: 
-				displayText = "";
-				gameEvent.gameEventInput(eventArray, input);
+				displayText = gameEvent.gameEventInput(eventArray, input);
 				break;
 		}
 		return displayText;
