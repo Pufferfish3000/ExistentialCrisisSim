@@ -33,7 +33,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		//crisisPanel.updateMain("hi");
+		crisisPanel.updateMain("hi");
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
 		playGame();
