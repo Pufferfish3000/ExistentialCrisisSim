@@ -30,7 +30,7 @@ public class GameEvent
 	}
 	
 	/**
-	 * displays event based on parameters and waits for player decision
+	 * displays event based on parameters
 	 * @param eventDescript
 	 * @param eventChoices
 	 * @param eventOutcomes
@@ -38,7 +38,6 @@ public class GameEvent
 	public String displayGameEvent(String[] eventData)
 	{
 		data = eventData;
-		System.out.println(data[0]);
 		buttonText.put("1", data[1]);
 		buttonText.put("2", data[2]);
 		buttonText.put("3", data[3]);
@@ -51,8 +50,9 @@ public class GameEvent
 		
 	}
 	
-	public String gameEventInput(int playerInput)
+	public String gameEventInput(String [] eventData, int playerInput)
 	{
+		data = eventData;
 		switch(playerInput)
 		{
 			case 1:

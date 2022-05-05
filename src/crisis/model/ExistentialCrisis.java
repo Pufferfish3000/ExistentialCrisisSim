@@ -13,8 +13,6 @@ import crisis.view.*;
 public class ExistentialCrisis 
 {	
 	private GameEvent gameEvent;
-//	private Controller app;
-//	private Panel view;
 	private Popup pop;
 	private String name;
 	private int sanity;
@@ -41,8 +39,6 @@ public class ExistentialCrisis
 		this.gameEvent = new GameEvent();
 		this.sleepy = 100;
 		this.displayText = "";
-//		this.app = new Controller();
-//		this.view = new Panel(app);
 	}
 	
 	/**
@@ -69,7 +65,7 @@ public class ExistentialCrisis
 		return displayText;
 	}
 	
-	public void getInput(int input)
+	public String getInput(int input)
 	{
 		switch(time)
 		{
@@ -83,9 +79,10 @@ public class ExistentialCrisis
 				
 			default: 
 				displayText = "";
-				gameEvent.displayGameEvent(eventArray);
+				gameEvent.gameEventInput(eventArray, input);
 				break;
 		}
+		return displayText;
 	}
 	
 	/**
@@ -224,9 +221,7 @@ public class ExistentialCrisis
 		fileName = gameRandom(2);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
-		gameEvent.displayGameEvent(eventArray);
-		
-		return "";
+		return gameEvent.displayGameEvent(eventArray);
 	}
 	
 	/**
