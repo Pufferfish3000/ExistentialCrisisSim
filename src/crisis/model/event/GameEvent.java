@@ -30,7 +30,7 @@ public class GameEvent
 	}
 	
 	/**
-	 * displays event based on parameters and waits for player decision
+	 * displays event based on parameters
 	 * @param eventDescript
 	 * @param eventChoices
 	 * @param eventOutcomes
@@ -50,7 +50,7 @@ public class GameEvent
 		
 	}
 	
-	public String gameEventInput(String[] eventData, int playerInput)
+	public String gameEventInput(String [] eventData, int playerInput)
 	{
 		data = eventData;
 		switch(playerInput)

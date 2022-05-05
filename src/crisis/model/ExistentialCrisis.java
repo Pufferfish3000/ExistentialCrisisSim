@@ -13,8 +13,6 @@ import crisis.view.*;
 public class ExistentialCrisis 
 {	
 	private GameEvent gameEvent;
-//	private Controller app;
-//	private Panel view;
 	private Popup pop;
 	private String name;
 	private int sanity;
@@ -41,8 +39,6 @@ public class ExistentialCrisis
 		this.gameEvent = new GameEvent();
 		this.sleepy = 100;
 		this.displayText = "";
-//		this.app = new Controller();
-//		this.view = new Panel(app);
 	}
 	
 	/**
@@ -69,7 +65,7 @@ public class ExistentialCrisis
 		return displayText;
 	}
 	
-	public String playerInput(int input)
+	public String getInput(int input)
 	{
 		switch(time)
 		{
