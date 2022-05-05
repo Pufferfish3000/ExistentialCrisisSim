@@ -42,7 +42,6 @@ public class Panel extends JPanel
 	   * Layout manager for the panel. Uses constraints between components to
 	   * align or spring from edges.
 	   */
-	private SpringLayout layout;
 	private SpringLayout layout_1;
 	
 	private JScrollPane crisisPane;
@@ -56,36 +55,20 @@ public class Panel extends JPanel
 		this.button3 = new JButton("3");
 		this.button4 = new JButton("4");
 				
-		this.crisisPane = new JScrollPane(mainField);
-		this.layout = new SpringLayout();
+		this.crisisPane = new JScrollPane();
+		this.layout_1 = new SpringLayout();
 		
-		this.healthField = new JTextArea(27,15);
-		this.mainField = new JTextArea(27,42);
+		this.healthField = new JTextArea("",27,15);
+		this.mainField = new JTextArea("",27,42);
 		mainField.setText(info);
 		this.layout_1 = new SpringLayout();
-		layout_1.putConstraint(SpringLayout.NORTH, crisisPane, 0, SpringLayout.NORTH, mainField);
-		layout_1.putConstraint(SpringLayout.WEST, crisisPane, 0, SpringLayout.WEST, mainField);
-		layout_1.putConstraint(SpringLayout.SOUTH, crisisPane, 0, SpringLayout.SOUTH, mainField);
-		layout_1.putConstraint(SpringLayout.EAST, crisisPane, 0, SpringLayout.EAST, mainField);
+		
 	
-		setupPane();
+	
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
-
-	private void setupPane()
-	{
-		healthField.setLineWrap(true);
-		healthField.setWrapStyleWord(true);
-		healthField.setEnabled(false);
-		
-		mainField.setLineWrap(true);
-		mainField.setWrapStyleWord(true);
-		mainField.setEnabled(false);
-		
-	}
-	
 	/**
 	 * Helper method to add all components to panel, and adjust gui Settings.
 	 */
@@ -103,6 +86,7 @@ public class Panel extends JPanel
 		
 		crisisPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		crisisPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		crisisPane.setViewportView(mainField);
 		
 		healthField.setLineWrap(true);
 		healthField.setWrapStyleWord(true);
@@ -114,33 +98,35 @@ public class Panel extends JPanel
 		
 	
 		this.add(healthField);
-		this.add(mainField);
 	}
 	/**
 	 * Helper method to add constraints for GUI components.
 	 */
 	private void setupLayout()
 	{
-		layout_1.putConstraint(SpringLayout.WEST, button2, 56, SpringLayout.EAST, health);
-		layout_1.putConstraint(SpringLayout.EAST, button2, -71, SpringLayout.WEST, button3);
-		layout_1.putConstraint(SpringLayout.SOUTH, health, 0, SpringLayout.SOUTH, button2);
 		layout_1.putConstraint(SpringLayout.WEST, button3, 438, SpringLayout.WEST, this);
-		layout_1.putConstraint(SpringLayout.WEST, mainField, 26, SpringLayout.WEST, this);
 		layout_1.putConstraint(SpringLayout.NORTH, button4, 40, SpringLayout.SOUTH, healthField);
 		layout_1.putConstraint(SpringLayout.SOUTH, button4, -29, SpringLayout.SOUTH, this);
-		layout_1.putConstraint(SpringLayout.NORTH, button3, 40, SpringLayout.SOUTH, mainField);
 		layout_1.putConstraint(SpringLayout.SOUTH, button3, -29, SpringLayout.SOUTH, this);
-		layout_1.putConstraint(SpringLayout.NORTH, button2, 40, SpringLayout.SOUTH, mainField);
 		layout_1.putConstraint(SpringLayout.SOUTH, button2, -29, SpringLayout.SOUTH, this);
-		layout_1.putConstraint(SpringLayout.NORTH, health, 0, SpringLayout.NORTH, button2);
 		layout_1.putConstraint(SpringLayout.WEST, health, 38, SpringLayout.WEST, this);
 		layout_1.putConstraint(SpringLayout.EAST, health, -622, SpringLayout.EAST, this);
 		layout_1.putConstraint(SpringLayout.EAST, button3, -50, SpringLayout.WEST, button4);
 		layout_1.putConstraint(SpringLayout.WEST, button4, 621, SpringLayout.WEST, this);
 		layout_1.putConstraint(SpringLayout.EAST, button4, -46, SpringLayout.EAST, this);
 		layout_1.putConstraint(SpringLayout.NORTH, healthField, 10, SpringLayout.NORTH, this);
-		layout_1.putConstraint(SpringLayout.NORTH, mainField, 0, SpringLayout.NORTH, healthField);
 		layout_1.putConstraint(SpringLayout.EAST, healthField, -35, SpringLayout.EAST, this);
+		
+		layout_1.putConstraint(SpringLayout.SOUTH, crisisPane, 0, SpringLayout.SOUTH, healthField);
+		layout_1.putConstraint(SpringLayout.WEST, button2, 56, SpringLayout.EAST, health);
+		layout_1.putConstraint(SpringLayout.EAST, button2, -71, SpringLayout.WEST, button3);
+		layout_1.putConstraint(SpringLayout.NORTH, health, 0, SpringLayout.NORTH, button2);
+		layout_1.putConstraint(SpringLayout.SOUTH, health, -29, SpringLayout.SOUTH, this);
+		layout_1.putConstraint(SpringLayout.NORTH, button2, 0, SpringLayout.NORTH, button3);
+		layout_1.putConstraint(SpringLayout.NORTH, button3, 0, SpringLayout.NORTH, button4);
+		layout_1.putConstraint(SpringLayout.NORTH, crisisPane, 15, SpringLayout.NORTH, this);
+		layout_1.putConstraint(SpringLayout.WEST, crisisPane, 15, SpringLayout.WEST, this);
+		layout_1.putConstraint(SpringLayout.EAST, crisisPane, -15, SpringLayout.WEST, healthField);
 	}
 	
 	/**
