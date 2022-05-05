@@ -21,8 +21,7 @@ public class Controller
 	public Controller()
 	{
 		this.game = new ExistentialCrisis();
-		this.crisisFrame = new Frame(this);
-		this.crisisPanel = new Panel(this);
+		this.crisisFrame = new Frame(this, game.runGame());
 		this.name = "";
 		this.pop = new Popup();
 		this.progress = false;
@@ -33,7 +32,6 @@ public class Controller
 	 */
 	public void start()
 	{
-		crisisPanel.updateMain("hi");
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
 		playGame();
@@ -44,7 +42,6 @@ public class Controller
 	 */
 	public void playGame()
 	{
-		System.out.println(game.runGame());
 			//game.runGame();
 	}
 

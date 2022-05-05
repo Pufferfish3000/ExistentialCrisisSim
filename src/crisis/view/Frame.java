@@ -9,12 +9,12 @@ public class Frame  extends JFrame
 	private Controller app;
 	private Panel crisisPanel;
 	
-	public Frame(Controller app)
+	public Frame(Controller app, String startInfo)
 	{
 		super();
 		
 		this.app = app;
-		this.crisisPanel = new Panel(this.app);
+		this.crisisPanel = new Panel(this.app, startInfo);
 		setupFrame();
 	}
 	

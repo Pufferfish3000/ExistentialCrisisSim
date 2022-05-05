@@ -22,7 +22,7 @@ public class Panel extends JPanel
 	
 	private SpringLayout layout;
 	
-	public Panel(Controller app)
+	public Panel(Controller app, String info)
 	{
 		super();
 		this.app = app;
@@ -37,7 +37,7 @@ public class Panel extends JPanel
 		
 		this.healthField = new JTextArea(27,15);
 		this.mainField = new JTextArea(27,42);
-		
+		mainField.setText(info);
 		this.layout = new SpringLayout();
 	
 
@@ -47,7 +47,7 @@ public class Panel extends JPanel
 		setupLayout();
 		setupListeners();
 	}
-	
+
 	private void setupPane()
 	{
 		healthField.setLineWrap(true);
@@ -106,7 +106,7 @@ public class Panel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String response = app.choose(1);
-				mainField.append(response);
+				updateMain(response);
 			}
 		});
 		
@@ -115,6 +115,7 @@ public class Panel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				String response = app.choose(2);
+				updateMain(response);
 				
 			}
 		});
@@ -123,7 +124,8 @@ public class Panel extends JPanel
 								{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				app.choose(3);
+				String response = app.choose(3);
+				updateMain(response);
 			}
 		});
 		
@@ -131,7 +133,8 @@ public class Panel extends JPanel
 								{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				app.choose(4);
+				String response = app.choose(4);
+				updateMain(response);
 			}
 		});
 	}
@@ -139,7 +142,6 @@ public class Panel extends JPanel
 	public void updateMain(String update)
 	{
 		mainField.append(update);
-		//mainField.append(update);
 	}
 	
 	public void updateHealth(String update)
