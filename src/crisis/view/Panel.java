@@ -114,7 +114,8 @@ public class Panel extends JPanel
 								{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				app.choose(2);
+				String response = app.choose(2);
+				
 			}
 		});
 		
@@ -137,7 +138,7 @@ public class Panel extends JPanel
 	
 	public void updateMain(String update)
 	{
-		mainField.setText("hello");
+		mainField.append(update);
 		//mainField.append(update);
 	}
 	
