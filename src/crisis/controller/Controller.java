@@ -44,8 +44,8 @@ public class Controller
 	 */
 	public void playGame()
 	{
-		crisisPanel.updateMain("hi");
-			//game.runGame();
+//		crisisPanel.updateMain("hi");
+		System.out.println(game.runGame());
 	}
 
 	
