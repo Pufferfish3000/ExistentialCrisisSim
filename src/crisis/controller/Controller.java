@@ -56,7 +56,6 @@ public class Controller
 	
 	public String choose(int buttonNumber)
 	{
-		game.playerInput(buttonNumber);
 		
 		if(game.isInsane())
 		{
@@ -67,6 +66,6 @@ public class Controller
 			playGame();
 		}
 		
-		return game.getDisplayText();
+		return game.playerInput(buttonNumber) + game.runGame();
 	}
 }
