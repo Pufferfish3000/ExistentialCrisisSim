@@ -342,6 +342,7 @@ public class ExistentialCrisis
 	
 	public void updateHealth()
 	{
+		newhealth = gameEvent.gethealthValues();
 		sanity = sanity + newhealth[0];
 		sleepy = sleepy + newhealth[1];
 		hunger = hunger + newhealth[2];
