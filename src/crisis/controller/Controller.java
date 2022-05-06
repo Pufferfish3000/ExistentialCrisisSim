@@ -63,10 +63,10 @@ public class Controller
 		}
 		else
 		{
-			playGame();
+			return game.playerInput(buttonNumber) + game.runGame();
 		}
+		return ("GAME OVER \n");
 		
-		return game.playerInput(buttonNumber) + game.runGame();
 	}
 	
 	public String healthbar()

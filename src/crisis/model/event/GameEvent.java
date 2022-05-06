@@ -107,4 +107,9 @@ public class GameEvent
 		return healthValues;
 	}
 	
+	public int [] gethealthValues()
+	{
+		return healthValues;
+	}
+	
 }
