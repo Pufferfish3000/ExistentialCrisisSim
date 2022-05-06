@@ -1,0 +1,21 @@
+You've woken up, and you feel a bit groggy. 
+Go back to sleep
+Go make some breakfast
+Hit the gym
+Contemplate every decision you've ever made.
+You head back to sleep. Couldn't hurt to get some more shut eye.
+0
+20
+-5
+Realizing you're hungry, you go downstairs and make a hearty meal.
+0
+0
+15
+You're feeling good about yourself this morning, why not get some exercise?
+10
+0
+-10
+You've done it again. Every decision you've ever made floods your mind and corrupts your thoughts for the rest of the day.
+-20
+-5
+0
