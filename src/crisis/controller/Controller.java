@@ -34,17 +34,7 @@ public class Controller
 	{
 		name = pop.askQuestion("Please enter your name.");
 		game.setName(name);
-		playGame();
 	}
-	
-	/**
-	 * runs the game until the player runs out of sanity
-	 */
-	public void playGame()
-	{
-			//game.runGame();
-	}
-
 	
 	/**
 	 * ends the game upon player death
