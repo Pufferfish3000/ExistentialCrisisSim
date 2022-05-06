@@ -77,6 +77,13 @@ public class Panel extends JPanel
 		this.setPreferredSize(new Dimension(800,600));
 		this.setLayout(layout_1);
 		
+		Color darkRed = new Color(139,0,0);
+		
+		health.setForeground(darkRed);
+		button2.setForeground(darkRed);
+		button3.setForeground(darkRed);
+		button4.setForeground(darkRed);
+		
 		this.add(health);
 		this.add(button2);
 		this.add(button3);
@@ -95,6 +102,10 @@ public class Panel extends JPanel
 		mainField.setLineWrap(true);
 		mainField.setWrapStyleWord(true);
 		mainField.setEnabled(false);
+		
+		
+		
+		this.setBackground(Color.DARK_GRAY);
 		
 	
 		this.add(healthField);
