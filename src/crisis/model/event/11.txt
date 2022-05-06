@@ -1,0 +1,21 @@
+You're now in Gotham City, and accidentally jay walk across the street. A certain caped vigilante starts running towards you at 27 MPH.
+Play dead
+Commit another crime
+Start singing "Something in the Way" by Nirvana
+Ask the vigilante about his day
+You lie still on the ground. The caped vigilante looks confused, but beats you up anyway.
+-10
+0
+0
+Since this is Gotham City, a nearby bank is being robbed, and you decide to join in on the spoils.
+10
+0
+0
+For an unknown reason, you begin to sing. The vigilante begins to insult you to the brink of a mental breakdown.
+-15
+0
+0
+You stop what you're doing and ask him about his day. You end up having a good conversation and he takes you under his wing as Robin.
+10
+0
+20
