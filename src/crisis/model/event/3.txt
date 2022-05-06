@@ -1,0 +1,21 @@
+While watching TV, it suddenly turns to static
+Unplug the TV
+Turn off the TV
+Look into the static
+Call a repair man
+You unplug the TV, it fades to black
+-10
+-5
+-5
+You turn off the TV with your remote, the TV cries in agony, as it dies you feel an overwhelming sense of guilt
+-30
+-10
+-10
+You look into the static, the static welcomes you with open arms as it drags you inside the TV for a few hours
+-5
+-5
+-5
+You call a repairman, he doesn't see the static that you do, you feel confused
+-20
+-5
+-10

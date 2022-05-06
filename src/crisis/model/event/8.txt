@@ -1,0 +1,21 @@
+Your bed appears to be floating above a bottomless pit
+Jump
+Sleep
+Throw something into the void
+Attempt to eat the void
+You jump into the void, you are never heard from again
+-100
+-100
+-100
+You fall asleep, the void disappears when you wake up
+-20
+-5
+-10
+You throw a book into the void, the void glows red upon its entering
+-40
+-5
+-10
+What are you even doing?
+-30
+-30
+-30

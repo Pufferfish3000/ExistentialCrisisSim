@@ -1,0 +1,21 @@
+You find yourself with free time
+Play video games
+Read a book
+Take a walk
+Clean your house
+You play a video game, and lose to children a third your age
+-20
+-5
+-5
+Reading a book helps you calm down 
+20
+-5
+-5
+You talk a walk around your house, you feel like you are being followed and hurry back home
+-20
+-10
+-10
+You clean your house, were there always this many blood stains?
+-20
+-5
+-10

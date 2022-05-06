@@ -1,0 +1,21 @@
+You walk into the woods and see a path, what path do you take?
+Forward
+Left
+Right
+Return home
+You continue walking forward, you take in the beautiful scenery
+20
+-5
+-5
+You wander left and get lost, how long have you been here? You don't know, you pass out on some rocks due to hunger
+-30
+-20
+-100
+The dark forest scares you, you quickly leave the forest
+-20
+-5
+-5
+You go back home having gained nothing
+0
+-5
+-10

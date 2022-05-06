@@ -1,0 +1,21 @@
+You see a pair of eyes peeking from underneath your bed
+Leave your house
+Drink an energy drink
+Say hi to the demon
+Hug the demon
+You leave your house, when you come back the house seems to be a bit more...... red?
+-25
+-5
+-10
+You drink an energy drink, you scream at the monster and run into a wall
+-5
+-5
+-30
+You say hi to the demon, it says hi back
+10
+-5
+-10
+You hug the demon, it hugs back
+20
+-5
+-10

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import crisis.controller.*;
 import crisis.view.*;
+import java.util.HashMap;
 
 public class ExistentialCrisis 
 {	
@@ -26,6 +27,7 @@ public class ExistentialCrisis
 	private int [] newhealth;
 	private String displayText;
 	private String displayHealth;
+	private HashMap <Integer, String> timeMap;
 	
 	public ExistentialCrisis()
 	{
@@ -43,6 +45,13 @@ public class ExistentialCrisis
 		this.displayText = "";
 		this.displayHealth = "";
 		this.newhealth = new int[3];
+		this.timeMap = new HashMap <Integer, String>();
+		timeMap.put(0, "03:00 AM");
+		timeMap.put(1, "07:00 AM");
+		timeMap.put(2, "11:00 AM");
+		timeMap.put(3, "03:00 PM");
+		timeMap.put(4, "07:00 PM");
+		timeMap.put(5, "11:00 PM");
 	}
 	
 	/**
@@ -82,6 +91,7 @@ public class ExistentialCrisis
 				
 			case 5:
 				displayText = "";
+				day++;
 				break;
 				
 			default: 
@@ -209,12 +219,12 @@ public class ExistentialCrisis
 	}
 	
 	/**
-	 * returns true if an players sanity is at or below 0
+	 * returns true if any of the players health values is at or below 0
 	 * @return if a play is insane
 	 */
 	public boolean isInsane()
 	{
-		if(sanity <= 0)
+		if(sanity <= 0 || hunger <=0 || sleepy <= 0)
 		{
 			return true;
 		}
@@ -226,7 +236,7 @@ public class ExistentialCrisis
 	 */
 	public String startEvent()
 	{
-		fileName = gameRandom(2);
+		fileName = gameRandom(13);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
 		return gameEvent.displayGameEvent(eventArray);
@@ -237,7 +247,7 @@ public class ExistentialCrisis
 	 */
 	public void food()
 	{
-		
+		hunger += 50;
 	}
 	
 	/**
@@ -245,7 +255,7 @@ public class ExistentialCrisis
 	 */
 	public void sleep()
 	{
-		
+		sleepy += 50;
 	}
 	
 	/**
@@ -332,7 +342,7 @@ public class ExistentialCrisis
 	public String displayHealthbar()
 	{
 		displayHealth = "DAY: " + day + "\n";
-		displayHealth += "TIME: " + time + "\n";
+		displayHealth += "TIME: " + timeMap.get(time) + "\n";
 		displayHealth += "SANITY: " + sanity + "\n";
 		displayHealth += "HUNGER: " + hunger + "\n";
 		displayHealth += "AWARENESS: " + sleepy + "\n";
@@ -346,5 +356,22 @@ public class ExistentialCrisis
 		sanity = sanity + newhealth[0];
 		sleepy = sleepy + newhealth[1];
 		hunger = hunger + newhealth[2];
+	}
+	
+	public String checkOverflow()
+	{
+		if(sanity > 100)
+		{
+			sanity = 100;
+		}
+		if(hunger > 100)
+		{
+			hunger = 100;
+		}
+		if(sleepy > 100)
+		{
+			sleepy = 100;
+		}
+		return "";
 	}
 }

@@ -56,14 +56,13 @@ public class Controller
 	
 	public String choose(int buttonNumber)
 	{
-		
 		if(game.isInsane())
 		{
 			endGame();
 		}
 		else
 		{
-			return game.playerInput(buttonNumber) + game.runGame();
+			return game.playerInput(buttonNumber) + game.runGame() + game.checkOverflow();
 		}
 		return ("GAME OVER \n");
 		
