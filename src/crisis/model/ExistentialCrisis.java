@@ -236,7 +236,7 @@ public class ExistentialCrisis
 	 */
 	public String startEvent()
 	{
-		fileName = gameRandom(2);
+		fileName = gameRandom(13);
 		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
 		return gameEvent.displayGameEvent(eventArray);
