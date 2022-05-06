@@ -1,0 +1,21 @@
+You walk into the garage and feel a bit parched. A cup is sitting on a desk but it is unknown what is inside.
+Partake of this unknown beverage.
+Go into the kitchen
+Endure the feeling of being thirsty.
+Throw the cup into the trash
+You drink the beverage. You feel drowsy, and begin to descend into madness because of the ś̸̤̮͔̰u̷̢̢̦̦͔̦͕͂͛̔̔̈́̇̓͆͊̕ͅb̸̨͚͕͉͔̖̰̌͗ş̶̧̨͎͓͔͉̖̒̌̈́̓̓̄̽̈̐̚t̵̨͇̤͍̤̩͓̗̪͐͆͂̈̈́͒̓̅̕a̶͖̞̖͛͛͒̆̿̚͘̚͝͝n̴̳̤̺̗͆̑̓̿̓͒̆͛̽̕c̸̨̟̜̩͔̣͎̭̆̉̓̽̇͊͠͝e̴̮̖̠̳̘̹͑̓̚̕
+-50
+0
+-15
+You go into the kitchen, who would drink someone else's drink?
+0
+0
+5
+You decide to ignore your body, and not get anything to drink
+-5
+0
+-10
+You throw it away, no littering in this house!
+5
+0
+-5

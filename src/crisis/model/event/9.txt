@@ -1,0 +1,21 @@
+You're out for a walk when a traveling merchant approaches you on the street. He offers you "The Remote" for a mere 10 shillings.
+Purchase "The Remote"
+Keep walking 
+Negotiate with the traveler
+Stab him
+You buy "The Remote", an offer you couldn't turn down. Amused by your new possession you press the menu button. You've been teleported to the Null Fields.
+-30
+-20
+-5
+You ignore the merchant. Who would buy something from that creep anyway?
+0
+-5
+-5
+You're intrigued but not so sure. You converse with the man, and he decides to give it to you for free. But what does it do?
+-15
+-5
+-5
+Consumed by your hate for merchants, you attempt to stab the man but go right through him. What is going on?
+-20
+-5
+-5
