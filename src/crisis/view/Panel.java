@@ -191,7 +191,7 @@ public class Panel extends JPanel
 	public void updateMain(String update)
 	{
 		mainField.append(update);
-		mainField.setCaretPosition(mainField.getText().length() - 1);
+		mainField.setCaretPosition(mainField.getDocument().getLength());
 	}
 	
 	/**
