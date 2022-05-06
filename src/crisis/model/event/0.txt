@@ -5,17 +5,17 @@ Ignore the shadow
 Cover the mirror
 You turn on the lights, the shadow disappears, or did it?
 -10
-0
-0
+-5
+-10
 Closing your eyes you feel the room grow cold, you are to afraid to open them for some time
 -40
 -5
-0
+-10
 You ignore the shadow, it can't bother you too much, right?
 5
-0
-0
+-5
+-10
 You cover the mirror, out of sight of of mind?
 0
-0
-0
+-5
+-10
