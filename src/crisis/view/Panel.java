@@ -84,6 +84,12 @@ public class Panel extends JPanel
 		button3.setForeground(darkRed);
 		button4.setForeground(darkRed);
 		
+		healthField.setBackground(Color.BLACK);
+		healthField.setForeground(Color.RED);
+		healthField.setOpaque(true);
+		mainField.setBackground(Color.BLACK);
+		crisisPane.setBackground(Color.BLACK);
+		mainField.setForeground(Color.RED);
 		this.add(health);
 		this.add(button2);
 		this.add(button3);
