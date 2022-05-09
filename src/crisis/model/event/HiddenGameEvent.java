@@ -2,6 +2,11 @@ package crisis.model.event;
 import java.util.ArrayList;
 import crisis.model.*;
 
+/**
+ * HiddenGameEvent class, an event that happens without letting the player know
+ * @author bbyr8994
+ *
+ */
 public class HiddenGameEvent extends GameEvent 
 {
 	private ExistentialCrisis game;
@@ -10,6 +15,9 @@ public class HiddenGameEvent extends GameEvent
 	private int sleepValue;
 	private int sanityValue;
 	
+	/**
+	 * constructs a new HiddenGameEvent
+	 */
 	public void HiddenGameEvent()
 	{
 		this.hungerValue = game.getHunger();

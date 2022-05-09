@@ -11,6 +11,11 @@ import crisis.controller.*;
 import crisis.view.*;
 import java.util.HashMap;
 
+/**
+ * Existential Crisis class, runs methods with given input
+ * @author bbyr8994
+ *
+ */
 public class ExistentialCrisis 
 {	
 	private GameEvent gameEvent;
@@ -29,6 +34,9 @@ public class ExistentialCrisis
 	private String displayHealth;
 	private HashMap <Integer, String> timeMap;
 	
+	/**
+	 * constructs a new ExistentialCrisis
+	 */
 	public ExistentialCrisis()
 	{
 		this.name = "DEFAULT NAME";
@@ -81,6 +89,11 @@ public class ExistentialCrisis
 		return displayText;
 	}
 	
+	/**
+	 * gets input based on in game time
+	 * @param input
+	 * @return
+	 */
 	public String playerInput(int input)
 	{
 		switch(time)
@@ -237,7 +250,7 @@ public class ExistentialCrisis
 	public String startEvent()
 	{
 		fileName = gameRandom(13);
-		eventData = loadTextToList("/crisis/model/event/" + fileName + ".txt");
+		eventData = loadTextToList("src/crisis/model/event/" + fileName + ".txt");
 		eventArray = eventData.toArray(new String[0]);
 		return gameEvent.displayGameEvent(eventArray);
 	}
@@ -339,6 +352,10 @@ public class ExistentialCrisis
 		pop.displayMessage(details);
 	}
 	
+	/**
+	 * gives string data to view to display the health bar
+	 * @return a string that represents player health
+	 */
 	public String displayHealthbar()
 	{
 		displayHealth = "DAY: " + day + "\n";
@@ -350,6 +367,9 @@ public class ExistentialCrisis
 		return displayHealth;	
 	}
 	
+	/**
+	 * updates health based on new values
+	 */
 	public void updateHealth()
 	{
 		newhealth = gameEvent.gethealthValues();
@@ -358,6 +378,10 @@ public class ExistentialCrisis
 		hunger = hunger + newhealth[2];
 	}
 	
+	/**
+	 * checks if any health variable is over 100, if so sets that variable to 100
+	 * @return an empty string
+	 */
 	public String checkOverflow()
 	{
 		if(sanity > 100)

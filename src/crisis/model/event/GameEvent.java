@@ -7,9 +7,13 @@ import crisis.model.*;
 import crisis.view.*;
 import crisis.controller.*;
 
+/**
+ * GameEvent class, gets an event, the choices, and the outcome based on input
+ * @author bbyr8994
+ *
+ */
 public class GameEvent 
 {
-//	private Controller app = new Controller();
 	private String [] data;
 	private String output;
 	private int hungerValue;
@@ -18,6 +22,9 @@ public class GameEvent
 	private int [] healthValues;
 	private HashMap <String, String> buttonText = new HashMap<String, String>();
 	
+	/**
+	 * constructs a new GameEvent
+	 */
 	public GameEvent()
 	{
 		this.hungerValue = 0;
@@ -48,6 +55,12 @@ public class GameEvent
 		
 	}
 	
+	/**
+	 * displays GameEvent outcome based on userInput
+	 * @param eventData
+	 * @param playerInput
+	 * @return a String representing the outcome
+	 */
 	public String gameEventInput(String [] eventData, int playerInput)
 	{
 		switch(playerInput)
@@ -107,6 +120,10 @@ public class GameEvent
 		return healthValues;
 	}
 	
+	/**
+	 * gets player health values
+	 * @return health values
+	 */
 	public int [] gethealthValues()
 	{
 		return healthValues;

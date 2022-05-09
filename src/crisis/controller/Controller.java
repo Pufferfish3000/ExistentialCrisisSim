@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 import crisis.model.ExistentialCrisis;
 
+/**
+ * Controller class, starts the main parts of thr project
+ * @author bbyr8994
+ *
+ */
 public class Controller 
 {
 	private Frame crisisFrame;
@@ -18,6 +23,9 @@ public class Controller
 	private String name;
 	private boolean progress;
 
+	/*
+	 * constructs a new Controller
+	 */
 	public Controller()
 	{
 		this.game = new ExistentialCrisis();
@@ -58,6 +66,10 @@ public class Controller
 		
 	}
 	
+	/**
+	 * gets player health bar
+	 * @return a String representing the player's health bar
+	 */
 	public String healthbar()
 	{
 		return game.displayHealthbar();
