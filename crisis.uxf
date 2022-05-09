@@ -90,4 +90,69 @@ bg=light_gray
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>258</y>
+      <w>222</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Frame
+bg=cyan
+--
+- app : Controller
+- crisisPanel : Panel
+
+--
+
++ Frame(Controller app, String startInfo)
++ setupFrame() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>48</y>
+      <w>222</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Panel
+bg=green
+
+--
+- app : Controller
+- health : JButton
+- button2 : JButton
+- button3 : JButton
+- button4 : JButton
+- healthField : JTextArea
+- mainField : JTextArea
+- layout_1 : SpringLayout
+- crisisPane : JScrollPane
+
+--
++ Panel(Controller app, String info)
++ setupPanel() : void
++ setupLayout() : void
++ setupListeners() : void
++ updateMain(String update) : void
++ updateHealth(String update) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1074</x>
+      <y>108</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>green
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
