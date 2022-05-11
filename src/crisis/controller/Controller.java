@@ -11,7 +11,7 @@ import crisis.model.ExistentialCrisis;
 
 /**
  * Controller class, starts the main parts of thr project
- * @author bbyr8994
+ * @author bbyr8994, ccol0217
  *
  */
 public class Controller 
